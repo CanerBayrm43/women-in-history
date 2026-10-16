@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tarihe İz Bırakan Kadınlar</title>
+<meta name="description" content="Sanat, bilim ve edebiyat alanında tarihe iz bırakan kadınların hikâyeleri.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#icerik">İçeriğe geç</a>
+
+<header class="ust">
+  <div class="kap ust-ic">
+    <a class="marka" href="#" id="marka"></a>
+    <nav class="menu" aria-label="Ana menü">
+      <a href="#alanlar">Alanlar</a>
+      <a href="#kadinlar">Kadınlar</a>
+      <button class="fav-btn" id="favAc" type="button">Favorilerim <span id="favSay">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="icerik">
+  <section class="hero">
+    <div class="kap">
+      <p class="ust-yazi" id="okulAdi"></p>
+      <h1>Tarihe iz bırakan <em>kadınlar</em></h1>
+      <p class="lead" id="slogan"></p>
+      <div class="hero-eylem">
+        <a class="btn" href="#alanlar">Keşfetmeye başla</a>
+        <button class="btn btn-ikincil" id="rastgele" type="button">Bugünün kadını</button>
+      </div>
+      <dl class="sayac">
+        <div><dt>Kadın</dt><dd id="sKadin">0</dd></div>
+        <div><dt>Alan</dt><dd id="sAlan">0</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="blok" id="alanlar">
+    <div class="kap">
+      <h2>Alanlar</h2>
+      <p class="alt">Bir alan seç, o alandaki kadınların isimleri aşağıda listelensin.</p>
+      <div class="alanlar" id="alanListe" role="tablist" aria-label="Alanlar"></div>
+    </div>
+  </section>
+
+  <section class="blok koyu-bant" id="kadinlar">
+    <div class="kap">
+      <div class="liste-ust">
+        <div>
+          <h2 id="listeBaslik">Tüm kadınlar</h2>
+          <p class="alt" id="listeAlt"></p>
+        </div>
+        <label class="ara">
+          <span class="sr">Kadın ara</span>
+          <input id="ara" type="search" placeholder="İsim veya anahtar kelime ara…" autocomplete="off">
+        </label>
+      </div>
+      <div class="kartlar" id="kartlar" aria-live="polite"></div>
+      <p class="bos" id="bos" hidden>Aramana uygun bir sonuç bulunamadı.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="alt-bilgi">
+  <div class="kap"><p id="altYazi"></p></div>
+</footer>
+
+<dialog id="detay" aria-labelledby="dAd">
+  <article class="d-kutu">
+    <button class="kapat" id="kapat" type="button" aria-label="Kapat">&times;</button>
+    <div class="d-ust">
+      <div class="d-foto" id="dFoto"></div>
+      <div>
+        <p class="etiket" id="dKat"></p>
+        <h3 id="dAd"></h3>
+        <p class="tarih" id="dTarih"></p>
+        <p class="unvan" id="dUnvan"></p>
+        <button class="btn btn-kucuk" id="dFav" type="button"></button>
+      </div>
+    </div>
+    <p class="ozet" id="dOzet"></p>
+    <blockquote id="dAlinti" hidden></blockquote>
+    <h4>Önemli detaylar</h4>
+    <ul class="detaylar" id="dDetay"></ul>
+    <div id="dZamanBlok">
+      <h4>Yaşam çizgisi</h4>
+      <ol class="zaman" id="dZaman"></ol>
+    </div>
+    <div class="d-gez">
+      <button class="btn btn-ikincil btn-kucuk" id="onceki" type="button">← Önceki</button>
+      <button class="btn btn-ikincil btn-kucuk" id="sonraki" type="button">Sonraki →</button>
+    </div>
+  </article>
+</dialog>
+
+<dialog id="favDialog" aria-labelledby="favB">
+  <article class="d-kutu">
+    <button class="kapat" id="favKapat" type="button" aria-label="Kapat">&times;</button>
+    <h3 id="favB">Favorilerim</h3>
+    <div class="kartlar kucuk" id="favListe"></div>
+    <p class="bos" id="favBos">Henüz favori eklemedin. Bir kadının sayfasındaki “Favorilere ekle” düğmesini kullan.</p>
+  </article>
+</dialog>
+
+<script src="kadinlar.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
